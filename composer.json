@@ -1,0 +1,18 @@
+{
+	"name": "andrelohmann-silverstripe/bootstrap_orderable_frontend",
+	"type": "silverstripe-module",
+	"description": "Frontend orderable paginated lists",
+	"license": "BSD-3-Clause",
+	"keywords": ["silverstripe", "framework"],
+	"authors": [
+		{
+			"name": "Andre Lohmann",
+			"homepage": "https://github.com/andrelohmann"
+		}
+	],
+	"require": {
+		"php": ">=5.3.2",
+		"composer/installers": "*"
+	},
+	"minimum-stability": "stable"
+}

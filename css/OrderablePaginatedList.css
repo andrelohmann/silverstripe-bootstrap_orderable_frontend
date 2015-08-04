@@ -1,0 +1,14 @@
+/**
+ * GridFieldOrderableRows
+ */
+
+.ss-orderable .col-reorder .handle {
+    cursor: move;
+}
+.ss-previouspage.ui-droppable-active, .ss-nextpage.ui-droppable-active{
+    background-color: yellow;
+    border: 1px solid #0F7864;
+    color: black;
+}
+/*.ss-orderable .ss-gridfield-item {clear: both}
+.ss-orderable .ss-gridfield-item ul li {float: left}*/
