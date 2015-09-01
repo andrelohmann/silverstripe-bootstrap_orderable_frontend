@@ -219,14 +219,14 @@ class OrderablePaginatedList extends PaginatedList {
 		$list  = $this->list;
 		$field = $this->getSortField();
                 
-                if($list instanceof ManyManyList){
-					if(!$this->getOwner() || !$this->getManyMany()) throw new Exception("Owner and ManyMany Relation missing on OrderablePaginatedList");
-                    $owner = $this->getOwner();
-                    list($parentClass, $componentClass, $parentField, $componentField, $table) = $owner->many_many($this->getManyMany());
-                    $many_many = ' AND "' . $parentField . '" = ' . $owner->ID;
-                }else{
-                    $many_many = '';
-                }
+		if($list instanceof ManyManyList){
+			if(!$this->getOwner() || !$this->getManyMany()) throw new Exception("Owner and ManyMany Relation missing on OrderablePaginatedList");
+			$owner = $this->getOwner();
+			list($parentClass, $componentClass, $parentField, $componentField, $table) = $owner->many_many($this->getManyMany());
+			$many_many = ' AND "' . $parentField . '" = ' . $owner->ID;
+		}else{
+			$many_many = '';
+		}
 
 		if(!is_array($ids)) {
 			throw new Exception("No IDs given on OrderablePaginatedList");
@@ -257,14 +257,14 @@ class OrderablePaginatedList extends PaginatedList {
 
 		$list  = $this->list;
                 
-                if($list instanceof ManyManyList){
-                    if(!$this->getOwner() || !$this->getManyMany()) throw new Exception("Owner and ManyMany Relation missing on OrderablePaginatedList");
-                    $owner = $this->getOwner();
-                    list($parentClass, $componentClass, $parentField, $componentField, $table) = $owner->many_many($this->getManyMany());
-                    $many_many = ' AND "' . $parentField . '" = ' . $owner->ID;
-                }else{
-                    $many_many = '';
-                }
+		if($list instanceof ManyManyList){
+			if(!$this->getOwner() || !$this->getManyMany()) throw new Exception("Owner and ManyMany Relation missing on OrderablePaginatedList");
+			$owner = $this->getOwner();
+			list($parentClass, $componentClass, $parentField, $componentField, $table) = $owner->many_many($this->getManyMany());
+			$many_many = ' AND "' . $parentField . '" = ' . $owner->ID;
+		}else{
+			$many_many = '';
+		}
 
 
 		$id = isset($move['id']) ? (int) $move['id'] : null;
@@ -283,13 +283,6 @@ class OrderablePaginatedList extends PaginatedList {
 		}
 
 		$this->populateSortValues($list, $many_many);
-		
-		/*var_dump(array(
-			'to' => $to,
-			'id' => $id,
-			'page' => $page,
-			'per' => $per
-		)); die();*/
 
 		if($to == 'prev') {
 			$swap = $list->sort($this->getSortField())->limit(1, ($page - 1) * $per - 1)->first();

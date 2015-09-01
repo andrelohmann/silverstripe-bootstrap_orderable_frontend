@@ -5,6 +5,10 @@
  * Andre Lohmann (Nickname: andrelohmann)
   <lohmann dot andre at googlemail dot com>
 
+## Requirements
+
+Silverstripe 3.2.x
+
 ## Overview
 
 This Module provides a nice paradigm to build orderable collections on the frontend
@@ -45,3 +49,11 @@ class MyController extends Controller {
 
 use templates/Layout/Page_orderableobjects.ss and templates/Includes/OrderableObjectsList.ss as base templates to build your own orderable paginated lists
 
+### Notice
+This repository uses the git flow paradigm.
+After each release cycle, do not forget to push tags, master and develop to the remote origin
+```
+git push --tags
+git push origin develop
+git push origin master
+```
