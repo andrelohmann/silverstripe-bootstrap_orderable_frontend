@@ -11,7 +11,7 @@
         </thead>
         <tbody class="ui-sortable"><%-- this css-class is essential, it wrappes the drag & dropable list --%>
             <% loop $Channels %>
-            <tr id="$ID"><%-- put the Objects ID here --%>
+            <tr id="$ID" class="ss-item"><%-- put the Objects ID here, css-class ss-item is essential --%>
                 <td class="col-reorder">
                     <span class="handle glyphicon glyphicon-move" aria-hidden="true"></span><% css-classes col-reorder > handle are building the draggable html element --%>
                 </td>
